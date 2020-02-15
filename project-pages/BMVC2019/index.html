@@ -1,0 +1,910 @@
+
+<!-- Preload all necessary images -->
+<script type="text/javascript">
+if (document.images)
+{
+    <!-- Special example -->
+    ex1_1 = new Image();
+    ex1_1.src = "images/special_example/monochrome_crop.jpg";
+    ex1_2 = new Image();
+    ex1_2.src = "images/special_example/monochrome_warp_crop.jpg";
+    ex1_3 = new Image();
+    ex1_3.src = "images/special_example/dcraw_crop.jpg";
+    ex1_4 = new Image();
+    ex1_4.src = "images/special_example/output_crop.jpg";
+    ex1_5 = new Image();
+    ex1_5.src = "images/special_example/groundtruth_crop.jpg";
+    ex1_6 = new Image();
+    ex1_6.src = "images/special_example/monochrome_warp_crop_nomask.jpg";
+
+    <!-- Improve processed -->
+    ex2_0 = new Image();
+    ex2_0.src = "images/improve_processed/device/monochrome_warp_crop.jpg";
+    ex2_1 = new Image();
+    ex2_1.src = "images/improve_processed/device/dcraw_crop.jpg";
+    ex2_2 = new Image();
+    ex2_2.src = "images/improve_processed/device/output_crop.jpg";
+    ex2_3 = new Image();
+    ex2_3.src = "images/improve_processed/device/output_Huawei_crop.jpg";
+    ex2_4 = new Image();
+    ex2_4.src = "images/improve_processed/device/output_procCamIm_crop.jpg";
+    ex2_5 = new Image();
+    ex2_5.src = "images/improve_processed/device/monochrome_warp_crop_nomask.jpg";
+    ex2_6 = new Image();
+    ex2_6.src = "images/improve_processed/device/monochrome_crop.jpg";
+
+
+    ex3_0 = new Image();
+    ex3_0.src = "images/improve_processed/human/monochrome_warp_crop.jpg";
+    ex3_1 = new Image();
+    ex3_1.src = "images/improve_processed/human/dcraw_crop.jpg";
+    ex3_2 = new Image();
+    ex3_2.src = "images/improve_processed/human/output_crop.jpg";
+    ex3_3 = new Image();
+    ex3_3.src = "images/improve_processed/human/output_Huawei_crop.jpg";
+    ex3_4 = new Image();
+    ex3_4.src = "images/improve_processed/human/output_procCamIm_crop.jpg";
+    ex3_5 = new Image();
+    ex3_5.src = "images/improve_processed/human/monochrome_warp_crop_nomask.jpg";
+    ex3_6 = new Image();
+    ex3_6.src = "images/improve_processed/human/monochrome_crop.jpg";
+
+    <!-- Quantitative -->
+    ex10_0 = new Image();
+    ex10_0.src = "images/quantitative_comparison/s55/monochrome_warp_crop.jpg";
+    ex10_1 = new Image();
+    ex10_1.src = "images/quantitative_comparison/s55/dcraw_crop.jpg";
+    ex10_2 = new Image();
+    ex10_2.src = "images/quantitative_comparison/s55/output_FNFGIF_crop.jpg";
+    ex10_3 = new Image();
+    ex10_3.src = "images/quantitative_comparison/s55/output_cnn_crop.jpg";
+    ex10_4 = new Image();
+    ex10_4.src = "images/quantitative_comparison/s55/output_Huawei_crop.jpg";
+    ex10_5 = new Image();
+    ex10_5.src = "images/quantitative_comparison/s55/output_crop.jpg";
+    ex10_6 = new Image();
+    ex10_6.src = "images/quantitative_comparison/s55/groundtruth_crop.jpg";
+    ex10_7 = new Image();
+    ex10_7.src = "images/quantitative_comparison/s55/monochrome_crop.jpg";
+    ex10_8 = new Image();
+    ex10_8.src = "images/quantitative_comparison/s55/monochrome_warp_crop_nomask.jpg";
+
+
+    ex11_0 = new Image();
+    ex11_0.src = "images/quantitative_comparison/s56/monochrome_warp_crop.jpg";
+    ex11_1 = new Image();
+    ex11_1.src = "images/quantitative_comparison/s56/dcraw_crop.jpg";
+    ex11_2 = new Image();
+    ex11_2.src = "images/quantitative_comparison/s56/output_FNFGIF_crop.jpg";
+    ex11_3 = new Image();
+    ex11_3.src = "images/quantitative_comparison/s56/output_cnn_crop.jpg";
+    ex11_4 = new Image();
+    ex11_4.src = "images/quantitative_comparison/s56/output_Huawei_crop.jpg";
+    ex11_5 = new Image();
+    ex11_5.src = "images/quantitative_comparison/s56/output_crop.jpg";
+    ex11_6 = new Image();
+    ex11_6.src = "images/quantitative_comparison/s56/groundtruth_crop.jpg";
+    ex11_7 = new Image();
+    ex11_7.src = "images/quantitative_comparison/s56/monochrome_crop.jpg";
+    ex11_8 = new Image();
+    ex11_8.src = "images/quantitative_comparison/s56/monochrome_warp_crop_nomask.jpg";
+
+    ex12_0 = new Image();
+    ex12_0.src = "images/quantitative_comparison/s57/monochrome_warp_crop.jpg";
+    ex12_1 = new Image();
+    ex12_1.src = "images/quantitative_comparison/s57/dcraw_crop.jpg";
+    ex12_2 = new Image();
+    ex12_2.src = "images/quantitative_comparison/s57/output_FNFGIF_crop.jpg";
+    ex12_3 = new Image();
+    ex12_3.src = "images/quantitative_comparison/s57/output_cnn_crop.jpg";
+    ex12_4 = new Image();
+    ex12_4.src = "images/quantitative_comparison/s57/output_Huawei_crop.jpg";
+    ex12_5 = new Image();
+    ex12_5.src = "images/quantitative_comparison/s57/output_crop.jpg";
+    ex12_6 = new Image();
+    ex12_6.src = "images/quantitative_comparison/s57/groundtruth_crop.jpg";
+    ex12_7 = new Image();
+    ex12_7.src = "images/quantitative_comparison/s57/monochrome_crop.jpg";
+    ex12_8 = new Image();
+    ex12_8.src = "images/quantitative_comparison/s57/monochrome_warp_crop_nomask.jpg";
+
+    ex4_0 = new Image();
+    ex4_0.src = "images/quantitative_comparison/clock/monochrome_warp_crop.jpg";
+    ex4_1 = new Image();
+    ex4_1.src = "images/quantitative_comparison/clock/dcraw_crop.jpg";
+    ex4_2 = new Image();
+    ex4_2.src = "images/quantitative_comparison/clock/output_FNFGIF_crop.jpg";
+    ex4_3 = new Image();
+    ex4_3.src = "images/quantitative_comparison/clock/output_cnn_crop.jpg";
+    ex4_4 = new Image();
+    ex4_4.src = "images/quantitative_comparison/clock/output_Huawei_crop.jpg";
+    ex4_5 = new Image();
+    ex4_5.src = "images/quantitative_comparison/clock/output_crop.jpg";
+    ex4_6 = new Image();
+    ex4_6.src = "images/quantitative_comparison/clock/groundtruth_crop.jpg";
+    ex4_7 = new Image();
+    ex4_7.src = "images/quantitative_comparison/clock/monochrome_crop.jpg";
+    ex4_8 = new Image();
+    ex4_8.src = "images/quantitative_comparison/clock/monochrome_warp_crop_nomask.jpg";
+
+
+    ex5_0 = new Image();
+    ex5_0.src = "images/quantitative_comparison/chart/monochrome_warp_crop.jpg";
+    ex5_1 = new Image();
+    ex5_1.src = "images/quantitative_comparison/chart/dcraw_crop.jpg";
+    ex5_2 = new Image();
+    ex5_2.src = "images/quantitative_comparison/chart/output_FNFGIF_crop.jpg";
+    ex5_3 = new Image();
+    ex5_3.src = "images/quantitative_comparison/chart/output_cnn_crop.jpg";
+    ex5_4 = new Image();
+    ex5_4.src = "images/quantitative_comparison/chart/output_Huawei_crop.jpg";
+    ex5_5 = new Image();
+    ex5_5.src = "images/quantitative_comparison/chart/output_crop.jpg";
+    ex5_6 = new Image();
+    ex5_6.src = "images/quantitative_comparison/chart/groundtruth_crop.jpg";
+    ex5_7 = new Image();
+    ex5_7.src = "images/quantitative_comparison/chart/monochrome_crop.jpg";
+    ex5_8 = new Image();
+    ex5_8.src = "images/quantitative_comparison/chart/monochrome_warp_crop_nomask.jpg";
+
+    ex8_0 = new Image();
+    ex8_0.src = "images/quantitative_comparison/pig/monochrome_warp_crop.jpg";
+    ex8_1 = new Image();
+    ex8_1.src = "images/quantitative_comparison/pig/dcraw_crop.jpg";
+    ex8_2 = new Image();
+    ex8_2.src = "images/quantitative_comparison/pig/output_FNFGIF_crop.jpg";
+    ex8_3 = new Image();
+    ex8_3.src = "images/quantitative_comparison/pig/output_cnn_crop.jpg";
+    ex8_4 = new Image();
+    ex8_4.src = "images/quantitative_comparison/pig/output_Huawei_crop.jpg";
+    ex8_5 = new Image();
+    ex8_5.src = "images/quantitative_comparison/pig/output_crop.jpg";
+    ex8_6 = new Image();
+    ex8_6.src = "images/quantitative_comparison/pig/groundtruth_crop.jpg";
+    ex8_7 = new Image();
+    ex8_7.src = "images/quantitative_comparison/pig/monochrome_crop.jpg";
+    ex8_8 = new Image();
+    ex8_8.src = "images/quantitative_comparison/pig/monochrome_warp_crop_nomask.jpg";
+
+    <!-- Qualitative -->
+    ex6_0 = new Image();
+    ex6_0.src = "images/qualitative_comparison/tree/monochrome_warp_crop.jpg";
+    ex6_1 = new Image();
+    ex6_1.src = "images/qualitative_comparison/tree/dcraw_crop.jpg";
+    ex6_2 = new Image();
+    ex6_2.src = "images/qualitative_comparison/tree/output_FNFGIF_crop.jpg";
+    ex6_3 = new Image();
+    ex6_3.src = "images/qualitative_comparison/tree/output_cnn_crop.jpg";
+    ex6_4 = new Image();
+    ex6_4.src = "images/qualitative_comparison/tree/output_Huawei_crop.jpg";
+    ex6_5 = new Image();
+    ex6_5.src = "images/qualitative_comparison/tree/output_crop.jpg";
+    ex6_6 = new Image();
+    ex6_6.src = "images/qualitative_comparison/tree/monochrome_warp_crop_nomask.jpg";
+    ex6_7 = new Image();
+    ex6_7.src = "images/qualitative_comparison/tree/monochrome_crop.jpg";
+
+    ex7_0 = new Image();
+    ex7_0.src = "images/qualitative_comparison/indoor/monochrome_warp_crop.jpg";
+    ex7_1 = new Image();
+    ex7_1.src = "images/qualitative_comparison/indoor/dcraw_crop.jpg";
+    ex7_2 = new Image();
+    ex7_2.src = "images/qualitative_comparison/indoor/output_FNFGIF_crop.jpg";
+    ex7_3 = new Image();
+    ex7_3.src = "images/qualitative_comparison/indoor/output_cnn_crop.jpg";
+    ex7_4 = new Image();
+    ex7_4.src = "images/qualitative_comparison/indoor/output_Huawei_crop.jpg";
+    ex7_5 = new Image();
+    ex7_5.src = "images/qualitative_comparison/indoor/output_crop.jpg";
+    ex7_6 = new Image();
+    ex7_6.src = "images/qualitative_comparison/indoor/monochrome_warp_crop_nomask.jpg";
+    ex7_7 = new Image();
+    ex7_7.src = "images/qualitative_comparison/indoor/monochrome_crop.jpg";
+
+
+    ex9_0 = new Image();
+    ex9_0.src = "images/qualitative_comparison/closetree/monochrome_warp_crop.jpg";
+    ex9_1 = new Image();
+    ex9_1.src = "images/qualitative_comparison/closetree/dcraw_crop.jpg";
+    ex9_2 = new Image();
+    ex9_2.src = "images/qualitative_comparison/closetree/output_FNFGIF_crop.jpg";
+    ex9_3 = new Image();
+    ex9_3.src = "images/qualitative_comparison/closetree/output_cnn_crop.jpg";
+    ex9_4 = new Image();
+    ex9_4.src = "images/qualitative_comparison/closetree/output_Huawei_crop.jpg";
+    ex9_5 = new Image();
+    ex9_5.src = "images/qualitative_comparison/closetree/output_crop.jpg";
+    ex9_6 = new Image();
+    ex9_6.src = "images/qualitative_comparison/closetree/monochrome_warp_crop_nomask.jpg";
+    ex9_7 = new Image();
+    ex9_7.src = "images/qualitative_comparison/closetree/monochrome_crop.jpg";
+
+
+}
+
+</script>
+
+    <title>Robust Joint Image Reconstruction from Color and Monochrome Cameras: Supplementary Materials</title>
+    <meta http-equiv="Content-Language" content="English">
+
+            <link rel="stylesheet" type="text/css" href="./format_files/pubStyle.css" media="screen">
+<style id="nightModeStyle">
+html.cye-enabled.cye-nm:not(*:-webkit-full-screen) body,
+ html.cye-enabled.cye-nm:not(*:-webkit-full-screen) #cye-workaround-body {-webkit-filter:contrast(91%) brightness(84%) invert(1);}</style><style id="cyebody">html.cye-enabled.cye-lm body{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style><style id="cyediv">html.cye-enabled.cye-lm div{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetable">html.cye-enabled.cye-lm th{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm td{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetextInput">html.cye-enabled.cye-lm input[type=text]{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm textarea{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeselect">html.cye-enabled.cye-lm select{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeul">html.cye-enabled.cye-lm ul{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeChangeByClick">html.cye-enabled.cye-lm .cye-lm-tag,html.cye-enabled.cye-lm.cye-lm-tag{background-color:#c4e0c7 !important;border-color:rgb(49, 56, 49) !important;background-image:none !important;color:#000000  !important}</style></head>
+
+<body onload="document.refresh();" style="">
+    <div id="wrap">
+        <div id="header">
+          <h1>Robust Joint Image Reconstruction from Color and Monochrome Cameras: Supplementary Materials</h1>
+          <h2>Anonymous submission<br />
+            Paper ID xxx </h2>
+        </div>
+
+        <div id="menu">
+            <ul>
+               	     <li><a href="#Appendix">Appendix</a></li>
+                     <li><a href="#Additional Results">Results</a></li>
+            </ul>
+
+        </div>
+
+        <div id="content">
+            <div class="main"> <a name="files"></a>
+	<a name="Appendix"></a>
+            <h2>Appendix</h2>
+            <font size="2">
+                <p>
+                For details on solving the joint optimization problem and robustness analysis of our algorithm, please see:
+                <a href="appendix.pdf"><font style="font-family: helvetica; font-size: 14px; color:red" /> <b>[appendix.pdf]</b></a>
+                </p>
+            </font>
+            &nbsp;
+
+            <a name="Additional Results"></a>
+            <h2>Additional Results</h2>
+
+            <table width="100%">
+            <b>Move your mouse over <font style="font-family: helvetica; font-size: 12px; color:red" /> <b>captions</b> <font style="font-family: helvetica; font-size: 14px; color:black" />to switch between input and results. Click for full resolution.</b>
+            <br>&nbsp;<br>
+                <tr><td>
+
+                <h3>Quantitative comparison</h3>
+                <font size="2">
+                <p>Results with PSNR. Our method ("Ours") is compared with several algorithms. "DT-GIF" is the result obtained by the guided filter version of the detail transfer method [Petschnigg et al, He et al]. "DJF" is the imaged produced by the deep joint filter [Li et al]. "Huawei" is the output image by Huawei P9's black box software. Captured ground truth is shown in "GT". </p>
+                </font>
+                <center>
+
+                    <!-- result -->
+                    <img width="90%" src="images/quantitative_comparison/s55/output_crop.jpg" border="0" name="ex10"><br>
+                    <a href="images/quantitative_comparison/s55/monochrome_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_7.src;"
+                        onmouseout="document.ex10.src = ex10_7.src;">
+                        <b>Mono </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/monochrome_warp_crop_nomask.jpg"
+                        onmouseover="document.ex10.src = ex10_8.src;"
+                        onmouseout="document.ex10.src = ex10_8.src;">
+                        <b>Reference (warped Mono) </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/monochrome_warp_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_0.src;"
+                        onmouseout="document.ex10.src = ex10_0.src;">
+                        <b>Mono (warped+mask)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/dcraw_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_1.src;"
+                        onmouseout="document.ex10.src = ex10_1.src;">
+                        <b>DCRaw (30.17dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/output_FNFGIF_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_2.src;"
+                        onmouseout="document.ex10.src = ex10_2.src;">
+                        <b>DT-GIF (33.55dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/output_cnn_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_3.src;"
+                        onmouseout="document.ex10.src = ex10_3.src;">
+                        <b>DJF (31.49dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/output_Huawei_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_4.src;"
+                        onmouseout="document.ex10.src = ex10_4.src;">
+                        <b>Huawei (31.75dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/output_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_5.src;"
+                        onmouseout="document.ex10.src = ex10_5.src;">
+                        <b>Ours (33.90dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s55/groundtruth_crop.jpg"
+                        onmouseover="document.ex10.src = ex10_6.src;"
+                        onmouseout="document.ex10.src = ex10_6.src;">
+                        <b>GT</b>
+                    </a>
+                    <br>&nbsp;<br>
+
+
+                    <!-- result -->
+                    <img width="90%" src="images/quantitative_comparison/s56/output_crop.jpg" border="0" name="ex11"><br>
+                    <a href="images/quantitative_comparison/s56/monochrome_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_7.src;"
+                        onmouseout="document.ex5.src = ex11_7.src;">
+                        <b>Mono </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/monochrome_warp_crop_nomask.jpg"
+                        onmouseover="document.ex11.src = ex11_8.src;"
+                        onmouseout="document.ex11.src = ex11_8.src;">
+                        <b>Reference (warped Mono) </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/monochrome_warp_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_0.src;"
+                        onmouseout="document.ex11.src = ex11_0.src;">
+                        <b>Mono (warped+mask)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/dcraw_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_1.src;"
+                        onmouseout="document.ex11.src = ex11_1.src;">
+                        <b>DCRaw (28.29dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/output_FNFGIF_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_2.src;"
+                        onmouseout="document.ex11.src = ex11_2.src;">
+                        <b>DT-GIF (29.62dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/output_cnn_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_3.src;"
+                        onmouseout="document.ex11.src = ex11_3.src;">
+                        <b>DJF (29.19dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/output_Huawei_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_4.src;"
+                        onmouseout="document.ex11.src = ex11_4.src;">
+                        <b>Huawei (28.82dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/output_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_5.src;"
+                        onmouseout="document.ex11.src = ex11_5.src;">
+                        <b>Ours (30.15dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s56/groundtruth_crop.jpg"
+                        onmouseover="document.ex11.src = ex11_6.src;"
+                        onmouseout="document.ex11.src = ex11_6.src;">
+                        <b>GT</b>
+                    </a>
+                    <br>&nbsp;<br>
+
+                    <!-- result -->
+                    <img width="90%" src="images/quantitative_comparison/s57/output_crop.jpg" border="0" name="ex12"><br>
+                    <a href="images/quantitative_comparison/s57/monochrome_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_7.src;"
+                        onmouseout="document.ex12.src = ex12_7.src;">
+                        <b>Mono </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/monochrome_warp_crop_nomask.jpg"
+                        onmouseover="document.ex12.src = ex12_8.src;"
+                        onmouseout="document.ex12.src = ex12_8.src;">
+                        <b>Reference (warped Mono) </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/monochrome_warp_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_0.src;"
+                        onmouseout="document.ex12.src = ex12_0.src;">
+                        <b>Mono (warped+mask)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/dcraw_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_1.src;"
+                        onmouseout="document.ex12.src = ex12_1.src;">
+                        <b>DCRaw (31.39dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/output_FNFGIF_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_2.src;"
+                        onmouseout="document.ex12.src = ex12_2.src;">
+                        <b>DT-GIF (35.64dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/output_cnn_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_3.src;"
+                        onmouseout="document.ex12.src = ex12_3.src;">
+                        <b>DJF (32.95dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/output_Huawei_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_4.src;"
+                        onmouseout="document.ex12.src = ex12_4.src;">
+                        <b>Huawei (33.68dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/output_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_5.src;"
+                        onmouseout="document.ex12.src = ex12_5.src;">
+                        <b>Ours (36.12dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/s57/groundtruth_crop.jpg"
+                        onmouseover="document.ex12.src = ex12_6.src;"
+                        onmouseout="document.ex12.src = ex12_6.src;">
+                        <b>GT</b>
+                    </a>
+                    <br>&nbsp;<br>
+
+                    <!-- result -->
+                    <img width="90%" src="images/quantitative_comparison/pig/output_crop.jpg" border="0" name="ex8"><br>
+                    <a href="images/quantitative_comparison/pig/monochrome_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_7.src;"
+                        onmouseout="document.ex8.src = ex8_7.src;">
+                        <b>Mono </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/monochrome_warp_crop_nomask.jpg"
+                        onmouseover="document.ex8.src = ex8_8.src;"
+                        onmouseout="document.ex8.src = ex8_8.src;">
+                        <b>Reference (warped Mono) </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/monochrome_warp_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_0.src;"
+                        onmouseout="document.ex8.src = ex8_0.src;">
+                        <b>Mono (warped+mask)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/dcraw_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_1.src;"
+                        onmouseout="document.ex8.src = ex8_1.src;">
+                        <b>DCRaw (30.28dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/output_FNFGIF_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_2.src;"
+                        onmouseout="document.ex8.src = ex8_2.src;">
+                        <b>DT-GIF (36.23dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/output_cnn_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_3.src;"
+                        onmouseout="document.ex8.src = ex8_3.src;">
+                        <b>DJF (34.37dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/output_Huawei_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_4.src;"
+                        onmouseout="document.ex8.src = ex8_4.src;">
+                        <b>Huawei (34.34dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/output_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_5.src;"
+                        onmouseout="document.ex8.src = ex8_5.src;">
+                        <b>Ours (36.74dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/pig/groundtruth_crop.jpg"
+                        onmouseover="document.ex8.src = ex8_6.src;"
+                        onmouseout="document.ex8.src = ex8_6.src;">
+                        <b>GT</b>
+                    </a>
+                    <br>&nbsp;<br>
+
+
+                    <!-- result -->
+                    <img width="90%" src="images/quantitative_comparison/chart/output_crop.jpg" border="0" name="ex5"><br>
+                    <a href="images/quantitative_comparison/chart/monochrome_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_7.src;"
+                        onmouseout="document.ex5.src = ex5_7.src;">
+                        <b>Mono </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/monochrome_warp_crop_nomask.jpg"
+                        onmouseover="document.ex5.src = ex5_8.src;"
+                        onmouseout="document.ex5.src = ex5_8.src;">
+                        <b>Reference (warped Mono) </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/monochrome_warp_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_0.src;"
+                        onmouseout="document.ex5.src = ex5_0.src;">
+                        <b>Mono (warped+mask)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/dcraw_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_1.src;"
+                        onmouseout="document.ex5.src = ex5_1.src;">
+                        <b>DCRaw (27.90dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/output_FNFGIF_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_2.src;"
+                        onmouseout="document.ex5.src = ex5_2.src;">
+                        <b>DT-GIF (34.32dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/output_cnn_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_3.src;"
+                        onmouseout="document.ex5.src = ex5_3.src;">
+                        <b>DJF (30.73dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/output_Huawei_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_4.src;"
+                        onmouseout="document.ex5.src = ex5_4.src;">
+                        <b>Huawei (32.72dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/output_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_5.src;"
+                        onmouseout="document.ex5.src = ex5_5.src;">
+                        <b>Ours (34.71dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/chart/groundtruth_crop.jpg"
+                        onmouseover="document.ex5.src = ex5_6.src;"
+                        onmouseout="document.ex5.src = ex5_6.src;">
+                        <b>GT</b>
+                    </a>
+                    <br>&nbsp;<br>
+
+                    <!-- result -->
+                    <img width="90%" src="images/quantitative_comparison/clock/output_crop.jpg" border="0" name="ex4"><br>
+                    <a href="images/quantitative_comparison/clock/monochrome_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_7.src;"
+                        onmouseout="document.ex4.src = ex4_7.src;">
+                        <b>Mono </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/monochrome_warp_crop_nomask.jpg"
+                        onmouseover="document.ex4.src = ex4_8.src;"
+                        onmouseout="document.ex4.src = ex4_8.src;">
+                        <b>Reference (warped Mono) </b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/monochrome_warp_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_0.src;"
+                        onmouseout="document.ex4.src = ex4_0.src;">
+                        <b>Mono (warped+mask)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/dcraw_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_1.src;"
+                        onmouseout="document.ex4.src = ex4_1.src;">
+                        <b>DCRaw (30.67dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/output_FNFGIF_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_2.src;"
+                        onmouseout="document.ex4.src = ex4_2.src;">
+                        <b>DT-GIF (37.83dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/output_cnn_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_3.src;"
+                        onmouseout="document.ex4.src = ex4_3.src;">
+                        <b>DJF (34.68dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/output_Huawei_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_4.src;"
+                        onmouseout="document.ex4.src = ex4_4.src;">
+                        <b>Huawei (35.41dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/output_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_5.src;"
+                        onmouseout="document.ex4.src = ex4_5.src;">
+                        <b>Ours (38.48dB)</b>
+                    </a>
+                    &nbsp; &nbsp;
+                    <a href="images/quantitative_comparison/clock/groundtruth_crop.jpg"
+                        onmouseover="document.ex4.src = ex4_6.src;"
+                        onmouseout="document.ex4.src = ex4_6.src;">
+                        <b>GT</b>
+                    </a>
+                    <br>&nbsp;<br>
+                </center>
+
+                    <h3>Improving pre-processed images</h3>
+                    <font size="2">
+                    <p>
+                    Here we demonstrate that our method can be used to improve images that were processed by the blackbox image processing stack implemented in the Huawei P9 cell phone. In this scenario we simply removing the Bayer downsampling matrix in our optimization problem and replacing the input image with the camera image (see "Huawei"). Unreliable correspondences are highlighted in "Mono (warped+mask)". "DCRaw" is the demosaicked image by DCRaw without denoising. "Ours" is our method working on raw Bayer images, whereas "Ours+Huawei" means that we work on images that have been preprocessed with the full (proprietary and unknown) Huawei software stack, including demosaicking, donoising etc.
+                    </p>
+                    </font>
+
+                    <center>
+
+                        <!-- result -->
+                        <img width="90%" src="images/improve_processed/device/output_procCamIm_crop.jpg" border="0" name="ex2"><br>
+                        <a href="images/improve_processed/device/monochrome_crop.jpg"
+                            onmouseover="document.ex2.src = ex2_6.src;"
+                            onmouseout="document.ex2.src = ex2_6.src;">
+                            <b>Mono </b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/device/monochrome_warp_crop_nomask.jpg"
+                            onmouseover="document.ex2.src = ex2_5.src;"
+                            onmouseout="document.ex2.src = ex2_5.src;">
+                            <b>Reference (warped Mono)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/device/monochrome_warp_crop.jpg"
+                            onmouseover="document.ex2.src = ex2_0.src;"
+                            onmouseout="document.ex2.src = ex2_0.src;">
+                            <b>Mono (warped+mask)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/device/dcraw_crop.jpg"
+                            onmouseover="document.ex2.src = ex2_1.src;"
+                            onmouseout="document.ex2.src = ex2_1.src;">
+                            <b>DCRaw</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/device/output_crop.jpg"
+                            onmouseover="document.ex2.src = ex2_2.src;"
+                            onmouseout="document.ex2.src = ex2_2.src;">
+                            <b>Ours</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/device/output_Huawei_crop.jpg"
+                            onmouseover="document.ex2.src = ex2_3.src;"
+                            onmouseout="document.ex2.src = ex2_3.src;">
+                            <b>Huawei</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/device/output_procCamIm_crop.jpg"
+                            onmouseover="document.ex2.src = ex2_4.src;"
+                            onmouseout="document.ex2.src = ex2_4.src;">
+                            <b>Huawei+Ours</b>
+                        </a>
+                        <br>&nbsp;<br>
+
+                        <!-- result -->
+                        <img width="90%" src="images/improve_processed/human/output_procCamIm_crop.jpg" border="0" name="ex3"><br>
+                        <a href="images/improve_processed/human/monochrome_crop.jpg"
+                            onmouseover="document.ex3.src = ex3_6.src;"
+                            onmouseout="document.ex3.src = ex3_6.src;">
+                            <b>Mono   </b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/human/monochrome_warp_crop_nomask.jpg"
+                            onmouseover="document.ex3.src = ex3_5.src;"
+                            onmouseout="document.ex3.src = ex3_5.src;">
+                            <b>Reference (warped Mono)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/human/monochrome_warp_crop.jpg"
+                            onmouseover="document.ex3.src = ex3_0.src;"
+                            onmouseout="document.ex3.src = ex3_0.src;">
+                            <b>Mono (warped+mask)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/human/dcraw_crop.jpg"
+                            onmouseover="document.ex3.src = ex3_1.src;"
+                            onmouseout="document.ex3.src = ex3_1.src;">
+                            <b>DCRaw</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/human/output_crop.jpg"
+                            onmouseover="document.ex3.src = ex3_2.src;"
+                            onmouseout="document.ex3.src = ex3_2.src;">
+                            <b>Ours</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/human/output_Huawei_crop.jpg"
+                            onmouseover="document.ex3.src = ex3_3.src;"
+                            onmouseout="document.ex3.src = ex3_3.src;">
+                            <b>Huawei</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/improve_processed/human/output_procCamIm_crop.jpg"
+                            onmouseover="document.ex3.src = ex3_4.src;"
+                            onmouseout="document.ex3.src = ex3_4.src;">
+                            <b>Huawei+Ours</b>
+                        </a>
+                        <br>&nbsp;<br>
+
+                    </center>
+
+                    <!-- Results Section -->
+                    <h3>An example where colorization would fail</h3>
+                    <font size="2">
+                    <p>
+                    We also provide an example scene where colorizing the monochrome image would lead to color ambiguity in occluded region (see the colorful beads occluded in the color image "DCRaw" but seen in the unwarped monochrome image "Mono"). Therefore it is more robust to reconstruct images directly on the RGB camera. "DCRaw" is the demosaicked image by DCRaw without denoising. PSNR is computed against the ground truth ("GT") captured by extending exposure time and decreasing ISO accordingly.
+                    </p>
+                    </font>
+
+                    <center>
+
+                        <!-- result -->
+                        <img width="90%" src="images/special_example/output_crop.jpg" border="0" name="ex1"><br>
+                        <a href="images/special_example/monochrome_crop.jpg"
+                            onmouseover="document.ex1.src = ex1_1.src;"
+                            onmouseout="document.ex1.src = ex1_1.src;">
+                            <b>Mono</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/special_example/monochrome_warp_crop_nomask.jpg"
+                            onmouseover="document.ex1.src = ex1_6.src;"
+                            onmouseout="document.ex1.src = ex1_6.src;">
+                            <b>Reference (warped Mono)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/special_example/monochrome_warp_crop.jpg"
+                            onmouseover="document.ex1.src = ex1_2.src;"
+                            onmouseout="document.ex1.src = ex1_2.src;">
+                            <b>Mono (warped+mask)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/special_example/dcraw_crop.jpg"
+                            onmouseover="document.ex1.src = ex1_3.src;"
+                            onmouseout="document.ex1.src = ex1_3.src;">
+                            <b>DCRaw (30.94dB)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/special_example/output_crop.jpg"
+                            onmouseover="document.ex1.src = ex1_4.src;"
+                            onmouseout="document.ex1.src = ex1_4.src;">
+                            <b>Ours (38.68dB)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/special_example/groundtruth_crop.jpg"
+                            onmouseover="document.ex1.src = ex1_5.src;"
+                            onmouseout="document.ex1.src = ex1_5.src;">
+                            <b>GT</b>
+                        </a>
+                        <br>&nbsp;<br>
+
+                    </center>
+
+
+                    <h3>Qualitative comparison</h3>
+                    <font size="2">
+                    <p>Additional examples without ground truth image. Unreliable correspondences are highlighted in "Monochrome (warped+mask)". </p>
+                    </font>
+                    <center>
+
+                        <!-- result -->
+                        <img width="90%" src="images/qualitative_comparison/tree/output_crop.jpg" border="0" name="ex6"><br>
+                        <a href="images/qualitative_comparison/tree/monochrome_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_7.src;"
+                            onmouseout="document.ex6.src = ex6_7.src;">
+                            <b>Mono </b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/monochrome_warp_crop_nomask.jpg"
+                            onmouseover="document.ex6.src = ex6_6.src;"
+                            onmouseout="document.ex6.src = ex6_6.src;">
+                            <b>Reference (warped Mono)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/monochrome_warp_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_0.src;"
+                            onmouseout="document.ex6.src = ex6_0.src;">
+                            <b>Mono (warped+mask)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/dcraw_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_1.src;"
+                            onmouseout="document.ex6.src = ex6_1.src;">
+                            <b>DCRaw</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/output_FNFGIF_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_2.src;"
+                            onmouseout="document.ex6.src = ex6_2.src;">
+                            <b>DT-GIF</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/output_cnn_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_3.src;"
+                            onmouseout="document.ex6.src = ex6_3.src;">
+                            <b>DJF</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/output_Huawei_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_4.src;"
+                            onmouseout="document.ex6.src = ex6_4.src;">
+                            <b>Huawei</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/tree/output_crop.jpg"
+                            onmouseover="document.ex6.src = ex6_5.src;"
+                            onmouseout="document.ex6.src = ex6_5.src;">
+                            <b>Ours</b>
+                        </a>
+                        <br>&nbsp;<br>
+
+                        <!-- result -->
+                        <img width="90%" src="images/qualitative_comparison/closetree/output_crop.jpg" border="0" name="ex9"><br>
+                        <a href="images/qualitative_comparison/closetree/monochrome_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_7.src;"
+                            onmouseout="document.ex9.src = ex9_7.src;">
+                            <b>Mono </b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/monochrome_warp_crop_nomask.jpg"
+                            onmouseover="document.ex9.src = ex9_6.src;"
+                            onmouseout="document.ex9.src = ex9_6.src;">
+                            <b>Reference (warped Mono)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/monochrome_warp_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_0.src;"
+                            onmouseout="document.ex9.src = ex9_0.src;">
+                            <b>Mono (warped+mask)</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/dcraw_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_1.src;"
+                            onmouseout="document.ex9.src = ex9_1.src;">
+                            <b>DCRaw</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/output_FNFGIF_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_2.src;"
+                            onmouseout="document.ex9.src = ex9_2.src;">
+                            <b>DT-GIF</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/output_cnn_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_3.src;"
+                            onmouseout="document.ex9.src = ex9_3.src;">
+                            <b>DJF</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/output_Huawei_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_4.src;"
+                            onmouseout="document.ex9.src = ex9_4.src;">
+                            <b>Huawei</b>
+                        </a>
+                        &nbsp; &nbsp;
+                        <a href="images/qualitative_comparison/closetree/output_crop.jpg"
+                            onmouseover="document.ex9.src = ex9_5.src;"
+                            onmouseout="document.ex9.src = ex9_5.src;">
+                            <b>Ours</b>
+                        </a>
+                        <br>&nbsp;<br>
+
+
+                    </center>
+                    <!-- End of comparison -->
+                </td></tr>
+
+            </table>
+
+
+
+            <a name="References"></a>
+            <h2>References</h2>
+            <font size="2">
+            <p>
+                Petschnigg, G., Szeliski, R., Agrawala, M., Cohen, M., Hoppe, H., Toyama, K.: Digital photography with flash and no-flash image pairs. ACM Transaction on Graphics (Proceddings SIGGRAPH 2004) 23(3) (August 2004)
+            </p>
+            <p>
+                He, K., Sun, J., Tang, X.: Guided image filtering. IEEE Transactions on Pattern Analysis and Machine Intelligence 35(6) (2013)
+            </p>
+            <p>
+                Li, Y., Huang, J.B., Narendra, A., Yang, M.H.: Deep joint image filtering. In: European Conference on Computer Vision. (2016)
+            </p>
+            </font>
+
+            </div>
+		<div style="clear: both;"> </div>
+        </div>
+
+		</div>
