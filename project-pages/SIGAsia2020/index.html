@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0071)https://yuejiang-nj.github.io/papers/CVPR2020_SDFDiff/project_page.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="cye-disabled cye-nm"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Continuous Curve Textures</title>
+
+
+<!-- Meta tags for Zotero grab citation -->
+<meta name="citation_title" content="Continuous Curve Textures">
+<meta name="citation_author" content="Tu, Peihan">
+<meta name="citation_author" content="Wei, Li-Yi">
+<meta name="citation_author" content="Yatani, Koji">
+<meta name="citation_author" content="Igarashi, Takeo">
+<meta name="citation_author" content="Zwicker, Matthias">
+<meta name="citation_publication_date" content="2020">
+<meta name="citation_conference_title" content="SIGGRAPH Asia 2020">
+<!-- <meta name="citation_volume" content="271"> -->
+<!-- <meta name="citation_issue" content="20"> -->
+<!-- <meta name="citation_firstpage" content="11761"> -->
+<!-- <meta name="citation_lastpage" content="11766"> -->
+<meta name="citation_pdf_url" content="https://yuejiang-nj.github.io/papers/CVPR2020_SDFDiff/paper.pdf">
+
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index,follow">
+<meta name="description" content="We propose SDFDiff, a novel approach for image-based shape optimization using differentiable rendering of 3D shapes represented by signed distance functions (SDFs). Compared to other representations, SDFs have the advantage that they can represent shapes with arbitrary topology, and that they guarantee watertight surfaces. We apply our approach to the problem of multi-view 3D reconstruction, where we achieve high reconstruction quality and can capture complex topology of 3D objects. In addition, we employ a multi-resolution strategy to obtain a robust optimization algorithm. We further demonstrate that our SDF-based differentiable renderer can be integrated with deep learning models, which opens up options for learning approaches on 3D objects without 3D supervision. In particular, we apply our method to single-view 3D reconstruction and achieve state-of-the-art results.">
+<meta name="keywords" content="differentiable rendering, signed distance field, image-based 3D reconstruction, 3D shape optimization, deep learning, inverse graphics">
+<link rel="author" href="https://yuejiang-nj.github.io/">
+
+<!-- Fonts and stuff -->
+<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>-->
+<link rel="stylesheet" type="text/css" href="./index_files/project.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen" href="./index_files/iconize.css">
+<!--<script src="js/google-code-prettify/prettify.js"></script>--> 
+
+
+<style id="nightModeStyle">
+html.cye-enabled.cye-nm:not(*:-webkit-full-screen) body,
+ html.cye-enabled.cye-nm:not(*:-webkit-full-screen) #cye-workaround-body {-webkit-filter:contrast(91%) brightness(84%) invert(1);}</style><style id="cyebody">html.cye-enabled.cye-lm body{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyediv">html.cye-enabled.cye-lm div{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetable">html.cye-enabled.cye-lm th{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm td{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyetextInput">html.cye-enabled.cye-lm input[type=text]{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}html.cye-enabled.cye-lm textarea{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeselect">html.cye-enabled.cye-lm select{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeul">html.cye-enabled.cye-lm ul{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style><style id="cyeChangeByClick">html.cye-enabled.cye-lm .cye-lm-tag,html.cye-enabled.cye-lm.cye-lm-tag{background-color:#cae6cd !important;border-color:rgb(50, 57, 51) !important;background-image:none !important;color:#000000  !important}</style></head>
+
+<body style="">
+  <div id="content">
+    <div id="content-inner">
+      <div class="section logos">
+	<!-- <a href="https://www.cs.umd.edu/" target="_blank"><img width="18%" height="18%" src="./index_files/umd.png"></a> -->
+<!-- 	<a href="http://www.cs.uni-saarland.de/" target="_blank"><img width="15%" height="15%" src="images/uds_csgrad_web.png"></a>
+	<a href="https://www.epfl.ch/en/" target="_blank"><img width="14%" height="14%" src="images/epfl.png"></a>
+	<a href="https://www.cs.ubc.ca/" target="_blank"><img width="14%" height="14%" src="images/ubc.png"></a> -->
+      </div>
+
+      <div class="section head">
+          <h1>Continuous Curve Textures</h1>
+
+	<div class="authors">
+	  <a href="http://www.cs.umd.edu/~phtu/" target="_blank">Peihan Tu</a><sup>1</sup>&nbsp;&nbsp;
+	  <a href="https://www.liyiwei.org/" target="_blank">Li-Yi Wei</a><sup>2</sup>&nbsp;&nbsp;
+	  <a href="https://iis-lab.org/member/koji-yatani/" target="_blank">Koji Yatani</a><sup>3</sup>&nbsp;&nbsp;
+	  <a href="https://www-ui.is.s.u-tokyo.ac.jp/~takeo/" target="_blank">Takeo Igarashi</a><sup>3</sup>&nbsp;&nbsp;
+	  <a href="http://www.cs.umd.edu/~zwicker/" target="_blank">Matthias Zwicker</a><sup>1</sup>
+	  <!-- &#160;&#160; -->
+	 <!--  <a href="http://people.mpi-inf.mpg.de/~elgharib/" target="_blank">Mohamed Elgharib</a><sup>1,2</sup>&#160;&#160;<br />
+	  <a href="https://people.epfl.ch/pascal.fua" target="_blank">Pascal Fua</a><sup>3</sup>&#160;&#160;
+	  <a href="http://people.mpi-inf.mpg.de/~hpseidel/" target="_blank">Hans-Peter Seidel</a><sup>1,2</sup>&#160;&#160;
+	  <a href="https://people.epfl.ch/helge.rhodin" target="_blank">Helge Rhodin</a><sup>3,4</sup>&#160;&#160;
+	  <a href="http://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html" target="_blank">Gerard Pons-Moll</a><sup>1,2</sup>&#160;&#160;
+	  <a href="http://www.mpi-inf.mpg.de/~theobalt/" target="_blank">Christian Theobalt</a><sup>1,2</sup> -->
+	</div>
+
+	<div class="affiliations">
+	  <sup>1</sup><a href="https://www.cs.umd.edu/" target="_blank">University of Maryland, College Park</a> &nbsp;&nbsp;
+	  <sup>2</sup><a href="https://research.adobe.com/" target="_blank">Adobe Research</a> &nbsp;&nbsp;
+	  <sup>3</sup><a href="https://www.u-tokyo.ac.jp/en/" target="_blank">University of Tokyo</a> &nbsp;&nbsp;
+	  <!-- <sup>2</sup><a href="https://saarland-informatics-campus.de/en/" target="_blank">Saarland Informatics Campus</a>&#160;&#160;
+	  <sup>3</sup><a href="https://www.epfl.ch/en/" target="_blank">EPFL</a>&#160;&#160;
+	  <sup>4</sup><a href="https://www.cs.ubc.ca/" target="_blank">University of British Columbia</a>&#160;&#160; -->
+	  <br>
+	</div>
+
+<!--
+	<div class="venue">The IEEE/CVF Conference on Computer Vision and Pattern Recognition (<a href="http://cvpr2020.thecvf.com/" target="_blank">CVPR 2020</a>) (<strong><font color="red">Oral</font></strong>), Seattle, WA.</div>
+-->
+
+		<div class="venue">SIGGRAPH Asia 2020 </div> 
+
+      </div>
+	  
+	  <!--	<div class="section abstract">
+	  <center>
+	    <h2>
+	      <b>Update: The dataset is now available for download</b>
+	      </h2>
+	    </center>
+	  <center>
+	    <h2>
+	      <b>Update: Live demo of VNect at CVPR17! (<a href="../VNectDemo/" target="_blank">More details</a>)</b>
+	      </h2>
+              </center>
+          </br>
+	  <center>
+	    <h2>
+                <b>Update: <a href="../VNectDemo/" target="_blank">VNect Demo</a> Model and Code Available For <br> Download as a <a href="#library"> C++ Library</a>! </b>
+	      </h2>
+	    </center>
+          </div> -->
+
+
+    <!--   <div class="section teaser">
+          <iframe width="640" height="360" src="//www.youtube-nocookie.com/embed/W1ZNFfftx2E?showinfo=0&controls=1&modestbranding=0&autohide=1&theme=light" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+        <video width="70%" class="tab" controls>Your browser does not support the &lt;video&gt; tag.
+              <source src="https://www.youtube.com/watch?v=l3h9JZHAOqI"/>
+        </video>
+ -->
+
+
+	<!-- <p style="font-size:11px; text-align:center">
+	  Download Video: <a href="content/XNect_SIGGRAPH2020.mp4" target="_blank">HD</a> (MP4, 1080p, 152 MB)
+	</p> -->
+      <!-- </div> -->
+
+<!--
+          <div class="section teaser">
+	  	<iframe src="./index_files/l3h9JZHAOqI.html" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="640" height="360" frameborder="0"></iframe>
+	<p style="font-size:11px; text-align:center">
+	  <a href="https://yuejiang-nj.github.io/papers/CVPR2020_SDFDiff/video.mp4" target="_blank">Download Video</a>(MP4, 57.7 MB)
+	</p>
+      </div>
+
+      <div class="section teaser">
+	  	<iframe src="./index_files/0A83pElG5gk.html" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="640" height="360" frameborder="0"></iframe>
+	<p style="font-size:11px; text-align:center">
+	  <a href="https://yuejiang-nj.github.io/papers/CVPR2020_SDFDiff/talk.mp4" target="_blank">Download Video</a>(MP4, 18.0 MB)
+	</p>
+      </div>
+
+-->
+         <div class="section teaser">
+         <!--
+	  	<iframe src="./index_files/g_exemplar_mixed_tree.svg" width="640" height="360" frameborder="0"></iframe> -->
+
+
+	  
+	  	<tr>
+	  	
+	  	<object data="./index_files/g_exemplar_mixed_tree.svg" type="image/svg+xml" height ="200" width="200" align="center"></object> 
+	  
+	  	<img src="http://graphics.stanford.edu/~liyiwei/images/gifs/worm_arrow.gif" align="center">
+	  	<td align="center">
+	  	<object data="./index_files/g_curve_recon_mixed_tree_n0_60_n1_50_n2_40_level_2_iter_6.svg" type="image/svg+xml" height ="300" width="300" align="center"></object>
+	  	</td>
+	  	<tr>
+	  		<br>
+	  	<br> Given a small input exemplar (left), our method synthesizes a larger output result (right).
+	  	<!--	<iframe src="./index_files/g_curve_recon_mixed_tree_n0_60_n1_50_n2_40_level_2_iter_6.svg" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="640" height="360" frameborder="0"></iframe> -->
+      </div>
+
+      <div class="section abstract">
+	<h2>Abstract</h2>
+	<p>
+Repetitive patterns are ubiquitous in natural and man-made objects, with a variety of development tools and methods. Manual authoring provides unprecedented degree of freedom and control, but can require significant artistic expertise and manual labor. Computational methods can automate parts of the manual creation process, but are mainly tailored for discrete pixels or elements instead of more general continuous structures. We propose an example-based method to synthesize continuous curve patterns from exemplars. Our main idea is to extend prior sample-based discrete element synthesis methods to consider not only sample positions (geometry) but also their connections (topology). Since continuous structures can exhibit higher complexity than discrete elements, we also propose robust, hierarchical synthesis to enhance output quality. Our algorithm can generate a variety of continuous curve patterns fully automatically. For further quality improvement and customization, we also present an autocomplete user interface to facilitate interactive creation and iterative editing. We evaluate our methods and interface via different patterns, ablation studies, and comparisons with alternative methods.
+	</p>
+      </div>
+
+<!--      <div class="section library">
+	<h2>VNect Library (New!!)</h2>
+        <a name="library"></a>
+	<p>
+        The C++ Library (Windows only) comes bundled with the lastest, greatest, faster and better VNect demo network, along with the kinematic skeleton fitting stage, and configurable filtering for various stages of the pipeline. The hyperparameters of the various stages are configurable, and the motion tracking results can be exported to BVH. For further details refer to the documentation supplied with the library. For access, see <a href='https://gvv-assets.mpi-inf.mpg.de/vnectlib'>GVV Assets Portal</a>.
+	</p>
+	<center>
+	  <ul>
+            <li class="grid_larger">
+	      <div class = "griditem_larger">
+                  <img src="images/vnect_bvh1.gif" alt="VNect BVH Example 1">
+		</div>
+	      </li>
+	    <li class="grid_larger"> 
+	       <div class = "griditem_larger"> 
+                  <img src="images/vnect_bvh2.gif" alt="VNect BVH Example 2">
+	       </div>
+	     </li>
+	    </ul>
+	    </center>
+</div> -->
+
+      <div class="section downloads">
+	<h2>Resources and Downloads</h2>
+	<center>
+	  <ul>
+            <li class="grid">
+	      <div class="griditem">
+	      	<br>
+		  Paper<br> (Pending) <!-- <a href="https://yuejiang-nj.github.io/papers/CVPR2020_SDFDiff/paper.pdf" target="_blank">PDF, 3.7 MB</a> -->
+		</div>
+	      </li>
+
+	    <li class="grid"> 
+	       <div class="griditem"> <br>
+	     	Code<br> (Pending) <!--<a href="https://github.com/YueJiang-nj/CVPR2020-SDFDiff" target="_blank">Pending</a> -->
+                <!--<br />(See Contact section) -->
+	       </div>
+	     </li>
+
+	   <!--  <li class="grid"> 
+	       <div class = "griditem"> 
+		<a href="https://docs.google.com/spreadsheets/d/12dmh9_Tx7bj1UXgM5v1KIXdID7bhqFKI73XTWEcqzmY/edit?usp=sharing" target="_blank" class="imageLink"><img src = "images/qual.jpg"></a><br />
+	     	CC BY Sequences<br /> <a href="https://docs.google.com/spreadsheets/d/12dmh9_Tx7bj1UXgM5v1KIXdID7bhqFKI73XTWEcqzmY/edit?usp=sharing" target="_blank">Links</a>
+	       </div>
+	     </li> -->
+             
+	    </ul>
+	    </center>
+	    </div>
+<br>
+
+ <div class="section list">
+	<h2>Citation</h2>
+	<!--
+	<p><a href="https://yuejiang-nj.github.io/papers/CVPR2020_SDFDiff/reference.bib" target="_blank">BibTeX, 1 KB</a></p> -->
+	<div class="section bibtex">
+	      <pre>@InProceedings{Tu:2020:CCT,
+    author = {Tu, Peihan and Wei, Li-Yi and Yatani, Koji and Igarashi, Takeo and Zwicker, Matthias},
+    title = {Continuous Curve Textures},
+    booktitle = {SIGGRAPH Asia 2020},
+    month = {November},
+    year = {2020}
+}</pre>
+	  </div>
+ </div>
+   
+      <div class="section contact">
+	<h2>Contact</h2>
+        <a name="contact"></a>
+        For questions and clarifications, please get in touch with:<br>
+        Peihan Tu <a href="mailto:phtu@cs.umd.edu">phtu@cs.umd.edu</a> <br>
+      </div>
+
+      <div class="section">
+	<hr class="smooth">
+	  Template from GVV Group at MPI.
+	  <!-- <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. |  -->
+          <!--Page last updated--> 
+              <!--#config timefmt="%d-%b-%Y" --><!--#echo var="LAST_MODIFIED" -->
+              <!-- <a href="https://imprint.mpi-klsb.mpg.de/inf/xnect">Imprint</a> | -->
+              <!-- <a href="https://data-protection.mpi-klsb.mpg.de/inf/xnect">Data Protection</a>  -->
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</body><div id="cyeBlackMaskLayer" style="background-color: rgb(19, 19, 19); position: fixed; width: 1980px; height: 1080px; z-index: -2147483648;"></div><div id="cye-workaround-body" style="position: absolute; left: 0px; top: 0px; z-index: -2147483646; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(238, 238, 238); height: 2350px; width: 1440px;"></div><div id="cye-workaround-body-image" style="position: absolute; left: 0px; top: 0px; z-index: -2147483645; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0); height: 2350px; width: 1440px;"></div><div id="__genieContainer" style="all: initial;"></div></html>
